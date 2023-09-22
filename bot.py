@@ -114,7 +114,7 @@ def send_block_auto_message(message):
 
 
 @bot.message_handler(commands=['my_auto'])
-def search_result(message):
+def search_my_auto_result(message):
     session = database.create_db_connection()()
     result = session.query(Cars).filter_by(user_id=message.chat.id).all()
     if len(result) > 0:
